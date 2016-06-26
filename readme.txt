@@ -1,5 +1,5 @@
 ------------------------------
-STRUNK AND WHITE THEME
+EXTREMLEY MINIMAL THEME
 ------------------------------
 
 Thanks for using the Extremely Minimal theme.
