@@ -2,15 +2,15 @@
 
 // Include Scripts and CSS
 
-function theme_styles() {
+function extreme_theme_styles() {
 
-	wp_enqueue_style( 'font_awesome', get_template_directory_uri() . '/font-awesome-4.5.0/css/font-awesome.min.css' );
+	wp_enqueue_style( 'font_awesome', get_template_directory_uri() . '/font-awesome-4.6.3/css/font-awesome.min.css' );
 	wp_enqueue_style( 'main_css', get_template_directory_uri() . '/style.css' );
 }
 
-add_action( 'wp_enqueue_scripts', 'theme_styles');
+add_action( 'wp_enqueue_scripts', 'extreme_theme_styles');
 
-function theme_js() {
+function extreme_theme_js() {
 
 	global $wp_scripts;
 
@@ -23,28 +23,52 @@ function theme_js() {
  	wp_enqueue_script( 'navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 }
 
-add_action( 'wp_enqueue_scripts', 'theme_js');
+add_action( 'wp_enqueue_scripts', 'extreme_theme_js');
+
+// Add WP Basic Features Support
+
+if ( ! function_exists( 'extreme_setup' ) ) :
+
+	function extreme_setup() {
+
+	// Add Support for Feed Links
+	
+	add_theme_support( 'automatic-feed-links' );
+	
+	// Add Menu Support
+	
+	add_theme_support ( 'menus' );
+	
+	// Add Thumbnails Support
+	
+	add_theme_support( 'post-thumbnails' );
+	
+	// Add Support for Flexible Title Tag
+	
+	add_theme_support( 'title-tag' );
+	
+	}
+endif;
+
+add_action( 'after_setup_theme', 'extreme_setup' );
 
 // Check for Front Page being used
-function themeslug_filter_front_page_template( $template ) {
+
+function extreme_filter_front_page_template( $template ) {
     return is_home() ? '' : $template;
 }
-add_filter( 'frontpage_template', 'themeslug_filter_front_page_template' );
-
-// Add Support for Flexible Title Tag
-
-add_theme_support( 'title-tag' );
+add_filter( 'frontpage_template', 'extreme_filter_front_page_template' );
 
 // Add Support for WooCommerce
 
-add_action( 'after_setup_theme', 'woocommerce_support' );
-function woocommerce_support() {
+add_action( 'after_setup_theme', 'extreme_woocommerce_support' );
+function extreme_woocommerce_support() {
     add_theme_support( 'woocommerce' );
 }
 
 // Add Support for Google Fonts
 
-function google_fonts() {
+function extreme_google_fonts() {
   $query_args = array(
     'family' => 'Open+Sans:400,400i,700,700i',
     'subset' => 'latin,latin-ext',
@@ -52,29 +76,18 @@ function google_fonts() {
   wp_enqueue_style( 'google_fonts', add_query_arg( $query_args, "//fonts.googleapis.com/css" ), array(), null );
 }
             
-add_action('wp_enqueue_scripts', 'google_fonts');
-
-// Add Menu Support
-
-add_theme_support ( 'menus' );
-
-// Add Thumbnails Support
-
-add_theme_support( 'post-thumbnails' );
+add_action('wp_enqueue_scripts', 'extreme_google_fonts');
 
 // Content Width Requirement
 
-if ( ! isset( $content_width ) ) {
-	$content_width = 800;
+function extreme_content_width() {
+	$GLOBALS['content_width'] = apply_filters( 'extreme_content_width', 800 );
 }
-
-// Add Support for Feed Links
-
-add_theme_support( 'automatic-feed-links' );
+add_action( 'after_setup_theme', 'extreme_content_width', 0 );
 
 // MENUS!
 
-function register_theme_menus() {
+function extreme_register_theme_menus() {
 
 	register_nav_menus (
 		array (
@@ -84,7 +97,7 @@ function register_theme_menus() {
 
 // Register Menus
 
-add_action ( 'init', 'register_theme_menus');
+add_action ( 'init', 'extreme_register_theme_menus');
 
 // WIDGETS!
 
@@ -103,11 +116,11 @@ require_once get_template_directory() . '/inc/theme-customizer.php';
 
 // Replaces the excerpt "more" text with a link
 
-function new_excerpt_more($more) {
+function extreme_excerpt_more($more) {
     global $post;
 	return ' <a class="moretag" href="'. get_permalink($post->ID) . '">Read More</a>';
 }
-add_filter('excerpt_more', 'new_excerpt_more');
+add_filter('excerpt_more', 'extreme_excerpt_more');
 
 
 /**
@@ -117,9 +130,9 @@ add_filter('excerpt_more', 'new_excerpt_more');
  * @return int (Maybe) modified excerpt length.
  */
 
-function wpdocs_custom_excerpt_length( $length ) {
+function extreme_custom_excerpt_length( $length ) {
     return 75;
 }
-add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length', 999 );
+add_filter( 'excerpt_length', 'extreme_custom_excerpt_length', 999 );
 
 ?>
