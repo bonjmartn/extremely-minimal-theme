@@ -37,14 +37,14 @@ class social_Widget extends WP_Widget {
       echo $args['before_title'] . apply_filters( 'widget_title', $instance['title'] ). $args['after_title'];
     }
  
-    $facebook = $instance['facebook'];
-    $twitter = $instance['twitter'];
-    $pinterest = $instance['pinterest'];
-    $instagram = $instance['instagram'];
-    $googleplus = $instance['googleplus'];
-    $yelp = $instance['yelp'];
-    $youtube = $instance['youtube'];
-    $linkedin = $instance['linkedin'];
+    $facebook = esc_url( $instance['facebook'] );
+    $twitter = esc_url( $instance['twitter'] );
+    $pinterest = esc_url( $instance['pinterest'] );
+    $instagram = esc_url( $instance['instagram'] );
+    $googleplus = esc_url( $instance['googleplus'] );
+    $yelp = esc_url( $instance['yelp'] );
+    $youtube = esc_url( $instance['youtube'] );
+    $linkedin = esc_url( $instance['linkedin'] );
 
     if ( ! empty( $instance['facebook'] ) ) {
       echo sprintf( '<a href="' . $facebook . '"><i class="fa fa-facebook-official"></i></a>');
@@ -89,14 +89,14 @@ class social_Widget extends WP_Widget {
    * @param array $instance Previously saved values from database.
    */
   public function form( $instance ) {
-    $facebook = ! empty( $instance['facebook'] ) ? $instance['facebook'] : __( 'Facebook URL', 'extremely-minimal-free' );
-    $twitter = ! empty( $instance['twitter'] ) ? $instance['twitter'] : __( 'Twitter URL', 'extremely-minimal-free' );
-    $pinterest = ! empty( $instance['pinterest'] ) ? $instance['pinterest'] : __( 'Pinterest URL', 'extremely-minimal-free' );
-    $instagram = ! empty( $instance['instagram'] ) ? $instance['instagram'] : __( 'Instagram URL', 'extremely-minimal-free' );
-    $googleplus = ! empty( $instance['googleplus'] ) ? $instance['googleplus'] : __( 'Google Plus URL', 'extremely-minimal-free' );
-    $yelp = ! empty( $instance['yelp'] ) ? $instance['yelp'] : __( 'Yelp URL', 'extremely-minimal-free' );
-    $youtube = ! empty( $instance['youtube'] ) ? $instance['youtube'] : __( 'YouTube URL', 'extremely-minimal-free' );
-    $linkedin = ! empty( $instance['linkedin'] ) ? $instance['linkedin'] : __( 'LinkedIn URL', 'extremely-minimal-free' );
+    $facebook = ! empty( $instance['facebook'] ) ? $instance['facebook'] : __( '', 'extremely-minimal-free' );
+    $twitter = ! empty( $instance['twitter'] ) ? $instance['twitter'] : __( '', 'extremely-minimal-free' );
+    $pinterest = ! empty( $instance['pinterest'] ) ? $instance['pinterest'] : __( '', 'extremely-minimal-free' );
+    $instagram = ! empty( $instance['instagram'] ) ? $instance['instagram'] : __( '', 'extremely-minimal-free' );
+    $googleplus = ! empty( $instance['googleplus'] ) ? $instance['googleplus'] : __( '', 'extremely-minimal-free' );
+    $yelp = ! empty( $instance['yelp'] ) ? $instance['yelp'] : __( '', 'extremely-minimal-free' );
+    $youtube = ! empty( $instance['youtube'] ) ? $instance['youtube'] : __( '', 'extremely-minimal-free' );
+    $linkedin = ! empty( $instance['linkedin'] ) ? $instance['linkedin'] : __( '', 'extremely-minimal-free' );
     ?>
 
     <p>
