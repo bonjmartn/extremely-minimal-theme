@@ -27,14 +27,14 @@
 
       <?php
         $defaults = array(
-          'before'           => '<p>' . __( 'Pages:', 'extremely-minimal-free' ),
+          'before'           => '<p>' . __( 'Pages:', 'extremely-minimal' ),
           'after'            => '</p>',
           'link_before'      => '',
           'link_after'       => '',
           'next_or_number'   => 'number',
           'separator'        => ' ',
-          'nextpagelink'     => __( 'Next page', 'extremely-minimal-free' ),
-          'previouspagelink' => __( 'Previous page', 'extremely-minimal-free' ),
+          'nextpagelink'     => __( 'Next page', 'extremely-minimal' ),
+          'previouspagelink' => __( 'Previous page', 'extremely-minimal' ),
           'pagelink'         => '%',
           'echo'             => 1
         );

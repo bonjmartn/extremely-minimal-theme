@@ -21,10 +21,10 @@
         <?php endwhile; else: ?>
 
         <div class="page-header">
-            <h1 class="page-title"><?php _e( 'Oh no!', 'extremely-minimal-free' ); ?></h1>
+            <h1 class="page-title"><?php _e( 'Oh no!', 'extremely-minimal' ); ?></h1>
         </div>
 
-        <p><?php _e( 'No content is appearing for this page!', 'extremely-minimal-free' ); ?></p>
+        <p><?php _e( 'No content is appearing for this page!', 'extremely-minimal' ); ?></p>
 
         <?php endif; ?>
 

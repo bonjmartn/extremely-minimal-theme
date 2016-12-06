@@ -11,6 +11,13 @@
           <?php endif; ?>
         </div>
 
+        <div>
+          <?php if ( ! dynamic_sidebar( 'open-footer') ): ?>
+            <h3>Footer Setup</h3>
+            <p>Go to Appearance > Widgets and drag any widget to the "Open Footer" widget area.</p>
+          <?php endif; ?>
+        </div>
+
       </div><!-- end of page container -->
 
         <div class="footer-strip">

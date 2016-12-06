@@ -18,7 +18,7 @@
         <?php the_content(); ?>
 
         <?php endwhile; else : ?>
-          <p><?php _e( 'Sorry, no posts matched your criteria.', 'extremely-minimal-free' ); ?></p>
+          <p><?php _e( 'Sorry, no posts matched your criteria.', 'extremely-minimal' ); ?></p>
         <?php endif; ?> 
 
   </div>

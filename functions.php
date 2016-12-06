@@ -70,7 +70,7 @@ function extreme_woocommerce_support() {
 
 function extreme_google_fonts() {
   $query_args = array(
-    'family' => 'Open+Sans:400,400i,700,700i',
+    'family' => 'Alegreya+Sans:400,400i,700,700i|Cormorant:400,400i,700,700i|Josefin+Slab:400,400i,700,700i|Lato:400,400i,700,700i|Merriweather:400,400i,700,700i|Open+Sans:400,400i,700,700i|Prompt:400,400i,700,700i|Raleway:400,400i,700,700i|Roboto:400,400i,700,700i|Source+Sans+Pro:400,400i,700,700i|Taviraj:400,400i,700,700i|Titillium+Web:400,400i,700,700i|Trirong:400,400i,600,600i|Ubuntu:400,400i,700,700i',
     'subset' => 'latin,latin-ext',
   );
   wp_enqueue_style( 'google_fonts', add_query_arg( $query_args, "//fonts.googleapis.com/css" ), array(), null );
@@ -91,7 +91,7 @@ function extreme_register_theme_menus() {
 
 	register_nav_menus (
 		array (
-			'header-menu' => __( 'Header Menu', 'extremely-minimal-free')
+			'header-menu' => __( 'Header Menu', 'extremely-minimal')
 	));
 }
 

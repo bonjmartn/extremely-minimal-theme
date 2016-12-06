@@ -1,14 +1,14 @@
 /*
-Theme Name: Extremely Minimal Free
+Theme Name: Extremely Minimal
 Theme URI: https://www.zenwebthemes.com/shop-themes/extremely-minimal/
 Author: Bonnie Martin
 Author URI: https://www.zenwebthemes.com
-Description: An extremely minimal WordPress theme. This is the free version.
+Description: An extremely minimal WordPress theme.
 Version: 1.3
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: full-width-template, custom-header, custom-menu, featured-images, footer-widgets, blog
-Text Domain: extremely-minimal-free
+Tags: full-width-template, custom-colors, custom-header, custom-menu, featured-images, footer-widgets, theme-options, blog
+Text Domain: extremely-minimal
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -339,14 +339,12 @@ textarea {
 
 a,
 a:visited {
-	color: #0072bc;
 	text-decoration: none;
 }
 
 a:hover,
 a:focus,
 a:active {
-	color: #252525;
 	text-decoration: underline;
 }
 
